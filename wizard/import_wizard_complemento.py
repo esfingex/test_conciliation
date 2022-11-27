@@ -29,7 +29,7 @@ class ImportWizardComplemento(models.TransientModel):
         if ext != 'xlsx':
             raise ValidationError("Extensión incorrecto del archivo")
         
-        if name != 'master':
+        if name != 'complemento':
             raise ValidationError("Nombre de archivo incorrecto")
         
         workbook = open_workbook(file_contents=b64decode(self.xlsx_data))
