@@ -11,8 +11,9 @@
 					<group>
                         <field name="user_id" readonly="1" />
 						<field name="init_date" readonly="1" />
-						<field name="xlsx_data" />
-					</group>  l
+						<field name="xlsx_data" filename="filename" />
+						<field name="filename" invisible="1" />
+					</group>
 
                     <footer>
 						<button name="load_data" string="Importar" type="object" class="btn-secondary" />
