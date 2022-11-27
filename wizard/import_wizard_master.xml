@@ -26,7 +26,7 @@
 		</record>
 
 		<record id="action_import_wizard_master" model="ir.actions.act_window">
-			<field name="name">Importador Test</field>
+			<field name="name">Importador Test Master</field>
 			<field name="type">ir.actions.act_window</field>
 			<field name="res_model">import.wizard.master</field>
 			<field name="view_mode">form</field>
