@@ -8,8 +8,7 @@ class Complemento(models.Model):
 
     name = fields.Char('Concepto')
     type = fields.Char('Tipo')
-    tax_information = fields.Char('Código', size=14)
     account = fields.Float('Cantidad')
-    tax_information = fields.Char('Información Impuestos')
-    date = fields.Date('res.country', 'Bancos')
+    tax_information = fields.Char('Información Impuesto', size=14)
+    date = fields.Date('Fecha')
     

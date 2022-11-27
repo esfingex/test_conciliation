@@ -10,6 +10,7 @@
     'depends': ['account'],
     'data': [
         'security/ir.model.access.csv',
+        'views/menu_view.xml',
         'views/master.xml',
         'views/complemento.xml',
     ],

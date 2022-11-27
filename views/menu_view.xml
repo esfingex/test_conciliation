@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <menuitem id="menu_master_all" parent="account.menu_finance" name="Prueba Técnica" sequence="1"/>
+
+</odoo>

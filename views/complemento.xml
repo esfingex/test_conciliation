@@ -1,6 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
+    <!-- Vista Form -->
+	<record id="complemento_form_view" model="ir.ui.view">
+		<field name="name">complemento.form.view</field>
+		<field name="model">complemento</field>
+		<field name="arch" type="xml">
+			<form>
+				<sheet>
+                    <group name="name" string="Complemento">
+                        <group>
+                            <field name="name" />
+                            <field name="type" />
+                            <field name="account" />
+                        </group>
+                        <group>
+                            <field name="tax_information" />
+                            <field name="date" />
+                        </group>
+                    </group>
+                </sheet>
+			</form>
+		</field>
+	</record>
+	
+	<!-- Vista Tree -->
+	<record id="complemento_tree" model="ir.ui.view">
+		<field name="name">complemento.tree</field>
+		<field name="model">complemento</field>
+		<field name="arch" type="xml">
+			<tree string='Complemento'>
+				<field name="name" />
+				<field name="type" />
+				<field name="account" />
+                <field name="tax_information" />
+                <field name="date" />
+			</tree>
+		</field>
+	</record>
     
+    <record id="action_complemento" model="ir.actions.act_window">
+        <field name="name">Complemento</field>
+        <field name="res_model">complemento</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_complemento" parent="menu_master_all" action="action_complemento" sequence="5"/>
     
+
 </odoo>
