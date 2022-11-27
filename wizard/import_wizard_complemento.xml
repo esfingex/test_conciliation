@@ -4,7 +4,7 @@
 
 		<record id="import_wizard_complemento_form" model="ir.ui.view">
 			<field name="name">import.wizard.complemento.form</field>
-			<field name="model">mport.wizard.complemento</field>
+			<field name="model">import.wizard.complemento</field>
 			<field name="arch" type="xml">
 				<form string="Importar">
 					

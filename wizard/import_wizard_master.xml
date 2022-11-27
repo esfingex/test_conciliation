@@ -4,7 +4,7 @@
 
 		<record id="import_wizard_master_form" model="ir.ui.view">
 			<field name="name">import.wizard.master.form</field>
-			<field name="model">mport.wizard.master</field>
+			<field name="model">import.wizard.master</field>
 			<field name="arch" type="xml">
 				<form string="Importar">
 					

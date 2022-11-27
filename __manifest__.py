@@ -13,7 +13,7 @@
         'views/menu_view.xml',
         'views/master.xml',
         'views/complemento.xml',
-        'wizard/import_wizard_master.xml'
+        'wizard/import_wizard_master.xml',
         'wizard/import_wizard_complemento.xml'
     ],
     'installable': True,
