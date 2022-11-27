@@ -8,9 +8,9 @@
 		<field name="arch" type="xml">
 			<form>
 				<sheet>
-                    <group name="name" string="Master">
+                    <group string="Master">
                         <group>
-                            <field name="name" />
+                            <field name="date" />
                             <field name="tax_information" />
                             <field name="amount" />
                         </group>
@@ -30,7 +30,7 @@
 		<field name="model">master</field>
 		<field name="arch" type="xml">
 			<tree string='Master'>
-				<field name="name" />
+				<field name="date" />
 				<field name="tax_information" />
 				<field name="amount" />
                 <field name="bank_id" />

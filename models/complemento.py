@@ -6,9 +6,9 @@ from odoo import models, fields, api
 class Complemento(models.Model):
     _name = 'complemento'
 
-    name = fields.Char('Concepto')
-    type = fields.Char('Tipo')
-    account = fields.Float('Cantidad')
-    tax_information = fields.Char('Información Impuesto', size=14)
-    date = fields.Date('Fecha')
+    concept = fields.Char(string='Concepto')
+    type = fields.Char(string='Tipo')
+    account = fields.Float(string='Cantidad')
+    tax_information = fields.Char(string='Información Impuesto', size=14)
+    date = fields.Date(string='Fecha')
     

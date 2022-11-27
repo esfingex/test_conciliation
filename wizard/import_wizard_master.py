@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 # Part of Odoo. See LICENSE file for full copyright and licensing details.
 from base64 import b64decode
+from datetime import datetime
 
 from xlrd import open_workbook
 from odoo import models, api, fields
@@ -49,7 +50,11 @@ class ImportWizardMaster(models.TransientModel):
             for i in range(1, num_cols):
                 if '' not in sheet._cell_values[i]:
                     value = dict(zip(head, sheet._cell_values[i]))
-                    data.append((0,0,value))
+                    date_tmp = datetime.utcfromtimestamp((value['date'] - 25569) * 86400.0)
+                    value['date'] = date_tmp
+                    value['bank_id'] = int(value['bank_id'])
+                    value['country_id'] = int(value['country_id'])
+                    data.append(value)
                 else:
                     raise ValidationError(("Datos vacios en la linea %s") % i)
             self.env['master'].create(data)

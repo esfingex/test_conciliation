@@ -10,7 +10,7 @@
 				<sheet>
                     <group name="name" string="Complemento">
                         <group>
-                            <field name="name" />
+                            <field name="concept" />
                             <field name="type" />
                             <field name="account" />
                         </group>
@@ -30,7 +30,7 @@
 		<field name="model">complemento</field>
 		<field name="arch" type="xml">
 			<tree string='Complemento'>
-				<field name="name" />
+				<field name="concept" />
 				<field name="type" />
 				<field name="account" />
                 <field name="tax_information" />

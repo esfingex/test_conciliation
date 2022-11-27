@@ -7,9 +7,9 @@ from odoo import models, fields, api
 class Master(models.Model):
     _name = 'master'
 
-    name = fields.Date('Fecha')
-    tax_information = fields.Char('Información Impuesto', size=14)
-    amount = fields.Float('Cantidad')
-    bank_id = fields.Many2one('res.bank', 'Bancos')
-    country_id = fields.Many2one('res.country', 'Bancos')
+    date = fields.Date(string='Fecha')
+    tax_information = fields.Char(string='Información Impuesto', size=14)
+    amount = fields.Float(string='Cantidad')
+    bank_id = fields.Many2one('res.bank', string='Bancos')
+    country_id = fields.Many2one('res.country', string='País')
     

@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 # Part of Odoo. See LICENSE file for full copyright and licensing details.
 from base64 import b64decode
+from datetime import datetime
 
 from xlrd import open_workbook
 from odoo import models, api, fields
@@ -11,8 +12,8 @@ class ImportWizardComplemento(models.TransientModel):
     _description = 'Importador Datos'
     
     user_id = fields.Many2one('res.users', string='Usuario', default=lambda self: self.env.user)
-    init_date = fields.Date('Fecha Actual', default=lambda self: fields.Datetime.now())
-    xlsx_data = fields.Binary('Archivo XLSX', required=True)
+    init_date = fields.Date(string='Fecha Actual', default=lambda self: fields.Datetime.now())
+    xlsx_data = fields.Binary(string='Archivo XLSX', required=True)
     filename = fields.Char()
     
     def load_data(self):
@@ -49,10 +50,12 @@ class ImportWizardComplemento(models.TransientModel):
             for i in range(1, num_cols):
                 if '' not in sheet._cell_values[i]:
                     value = dict(zip(head, sheet._cell_values[i]))
-                    data.append((0,0,value))
+                    date_tmp = datetime.utcfromtimestamp((value['date'] - 25569) * 86400.0)
+                    value['date'] = date_tmp
+                    data.append(value)
                 else:
                     raise ValidationError(("Datos vacios en la linea %s") % i)
-            self.env['complemento'].create(data)
+            self.env['master'].create(data)
         
         
     
