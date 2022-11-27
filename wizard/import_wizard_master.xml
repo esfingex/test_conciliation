@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<odoo>
+    <data>
+
+		<record id="import_wizard_master_form" model="ir.ui.view">
+			<field name="name">import.wizard.master.form</field>
+			<field name="model">mport.wizard.master</field>
+			<field name="arch" type="xml">
+				<form string="Importar">
+					
+					<group>
+                        <field name="user_id" readonly="1" />
+						<field name="init_date" readonly="1" />
+						<field name="xlsx_data" />
+					</group>  l
+
+                    <footer>
+						<button name="load_data" string="Importar" type="object" class="btn-secondary" />
+                        or
+                        <button string="Cancelar" class="btn-secondary" special="cancel"/>
+					</footer>
+ 
+				</form>
+			</field>
+		</record>
+
+		<record id="action_import_wizard_master" model="ir.actions.act_window">
+			<field name="name">Importador Test</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">import.wizard.master</field>
+			<field name="view_mode">form</field>
+			<field name="target">new</field>
+		</record>
+
+		<menuitem id="menu_import_wizard_master" name="Importador Test Master" parent="menu_master_all" 
+            sequence="5" action="action_import_wizard_master" />
+
+    </data>
+</odoo>
