@@ -36,8 +36,7 @@ class ImportWizardComplemento(models.TransientModel):
         sheet_names = workbook.sheet_names()
         sheet = workbook.sheet_by_name(sheet_names[0])
         
-        num_rows = sheet.nrows - 1
-        num_cols = sheet.ncols - 1
+        num_rows = sheet.nrows
         
         #Cabecera archivo master.xlsx
         head = ['concept','type','account','tax_information','date']
@@ -47,7 +46,7 @@ class ImportWizardComplemento(models.TransientModel):
             raise ValidationError("Encabezado no existe, favor agregar encabezado")
         else:
             data = []
-            for i in range(1, num_cols):
+            for i in range(1, num_rows):
                 if '' not in sheet._cell_values[i]:
                     value = dict(zip(head, sheet._cell_values[i]))
                     date_tmp = datetime.utcfromtimestamp((value['date'] - 25569) * 86400.0)
@@ -55,7 +54,7 @@ class ImportWizardComplemento(models.TransientModel):
                     data.append(value)
                 else:
                     raise ValidationError(("Datos vacios en la linea %s") % i)
-            self.env['master'].create(data)
+            self.env['complemento'].create(data)
         
         
     

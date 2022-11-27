@@ -36,8 +36,7 @@ class ImportWizardMaster(models.TransientModel):
         sheet_names = workbook.sheet_names()
         sheet = workbook.sheet_by_name(sheet_names[0])
         
-        num_rows = sheet.nrows - 1
-        num_cols = sheet.ncols - 1
+        num_rows = sheet.nrows
         
         #Cabecera archivo master.xlsx
         head = ['date', 'tax_information', 'amount', 'bank_id', 'country_id']
@@ -47,7 +46,7 @@ class ImportWizardMaster(models.TransientModel):
             raise ValidationError("Encabezado no existe, favor agregar encabezado")
         else:
             data = []
-            for i in range(1, num_cols):
+            for i in range(1, num_rows):
                 if '' not in sheet._cell_values[i]:
                     value = dict(zip(head, sheet._cell_values[i]))
                     date_tmp = datetime.utcfromtimestamp((value['date'] - 25569) * 86400.0)
