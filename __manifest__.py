@@ -14,7 +14,8 @@
         'views/master.xml',
         'views/complemento.xml',
         'wizard/import_wizard_master.xml',
-        'wizard/import_wizard_complemento.xml'
+        'wizard/import_wizard_complemento.xml',
+        'report/concilied_report.xml'
     ],
     'installable': True,
     'application': True,

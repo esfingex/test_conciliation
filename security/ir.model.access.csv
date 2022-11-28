@@ -3,3 +3,4 @@ access_master,access_master,model_master,base.group_user,1,1,1,1
 access_complemento,access_complemento,model_complemento,base.group_user,1,1,1,1
 access_import_wizard_master,access_import_wizard_master,model_import_wizard_master,base.group_user,1,1,1,1
 access_import_wizard_complemento,access_import_wizard_complemento,model_import_wizard_complemento,base.group_user,1,1,1,1
+access_conciled_report,access_conciled_report,model_conciled_report,base.group_user,1,1,1,1

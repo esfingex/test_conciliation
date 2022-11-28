@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="conciled_report_tree" model="ir.ui.view">
+        <field name="name">conciled.report.tree</field>
+        <field name="model">conciled.report</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="id" invisible="1"/>
+                <field name="date"/>
+                <field name="tax_information"/>
+                <field name="amount"/>
+                <field name="bank_id"/>
+                <field name="country_id" />
+                <field name="concept" />
+                <field name="type" />
+                <field name="account" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_concilied_report" model="ir.actions.act_window">
+        <field name="name">Reporte Conciliados</field>
+        <field name="res_model">conciled.report</field>
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="conciled_report_tree"/>
+    </record>
+
+    <menuitem id="menu_concilied_report" parent="menu_master_all" action="action_concilied_report" 
+        name="Conciliados" sequence="6"/>
+
+
+</odoo>
